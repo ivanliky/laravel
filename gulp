@@ -1,0 +1,23 @@
+[33mcommit 1a8d06dd4cb5d0e837ce03a348aa26c8a55e4b64[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Ivan Mitic <ivanmitic91@gmail.com>
+Date:   Sun Apr 7 11:47:54 2019 +0200
+
+    Working all
+
+[33mcommit 811d658b1379820c275949f1dbbd809b4da9751c[m
+Author: Ivan Mitic <ivanmitic91@gmail.com>
+Date:   Sat Apr 6 12:43:29 2019 +0200
+
+    Working Gulp and compiled
+
+[33mcommit 4da17617813f4ce9c164027570917655c84ea2ef[m
+Author: Ivan Mitic <ivanmitic91@gmail.com>
+Date:   Sat Apr 6 11:10:25 2019 +0200
+
+    Install Gulp
+
+[33mcommit 01c83d48ecb4061a0d80702f7af382eff0549e7d[m
+Author: Ivan Mitic <ivanmitic91@gmail.com>
+Date:   Fri Apr 5 21:11:50 2019 +0200
+
+    Create admin views
