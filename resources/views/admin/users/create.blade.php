@@ -1,1 +1,10 @@
-<h1>Working create</h1>
+@extends('layouts.admin')
+
+@section('content')
+
+    <h1>Create Users</h1>
+
+   
+
+
+@endsection
