@@ -1,20 +1,20 @@
 [
     {
         "type": "Directory",
-        "name": "c:\\wamp64\\www\\codehacking\\resources\\views",
-        "parent_id": null,
-        "fsPath": "c:\\wamp64\\www\\codehacking\\resources\\views",
-        "workspaceRoot": null,
-        "workspacePath": null,
-        "id": "dx3PYiBfcH8It2QO"
-    },
-    {
-        "type": "Directory",
         "name": "e:\\wamp64\\www\\codehacking\\app\\Http\\Controllers",
         "parent_id": null,
         "fsPath": "e:\\wamp64\\www\\codehacking\\app\\Http\\Controllers",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "soQJmeUjqI6NPn8M"
+    },
+    {
+        "type": "Directory",
+        "name": "e:\\wamp64\\www\\codehacking\\resources\\views",
+        "parent_id": null,
+        "fsPath": "e:\\wamp64\\www\\codehacking\\resources\\views",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "Ix1rX2lUpdij4MHN"
     }
 ]

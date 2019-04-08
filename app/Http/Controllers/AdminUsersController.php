@@ -46,7 +46,15 @@ class AdminUsersController extends Controller
     public function store(UsersRequest $request)
     {
 
-        return $request->all();
+        $this->validate($request, [
+
+            'users' => 'unique:users, email'
+
+        ]);
+
+        User::create($request->all());
+
+        return redirect('admin/users');
     }
 
     /**
