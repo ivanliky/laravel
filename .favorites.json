@@ -16,5 +16,14 @@
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "Ix1rX2lUpdij4MHN"
+    },
+    {
+        "type": "Directory",
+        "name": "e:\\wamp64\\www\\codehacking\\database\\migrations",
+        "parent_id": null,
+        "fsPath": "e:\\wamp64\\www\\codehacking\\database\\migrations",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "sevXWLJwBb3ZNrGp"
     }
 ]
