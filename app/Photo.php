@@ -7,11 +7,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Photo extends Model
 {
+    protected $uploads = '/images/';
+
     protected $fillable = ['file'];
 
-    public function photos()
+    public function getFileAttribute($photo)
     {
 
-        return $this->belongsTo('App\Photo');
+        return $this->uploads . $photo;
     }
 }

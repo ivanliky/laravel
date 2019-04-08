@@ -30,7 +30,8 @@ class UsersRequest extends Request
             'role_id' => 'required',
             'is_active' => 'required',
             'password' => 'required',
-            'email' => 'unique:users'
+            'email' => 'unique:users',
+            'photo_id' => 'required'
 
         ];
     }
