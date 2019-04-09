@@ -29,6 +29,16 @@ class UsersUpdateRequest extends Request
             'email' => 'required',
             'role_id' => 'required',
             'is_active' => 'required',
+            'photo_id' => 'dimensions:width=128,height=128'
+
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+
+            'dimensions' => 'Please find image which dimensions are 128 x 128'
 
         ];
     }
