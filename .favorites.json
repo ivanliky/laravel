@@ -25,5 +25,14 @@
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "sevXWLJwBb3ZNrGp"
+    },
+    {
+        "type": "Directory",
+        "name": "e:\\wamp64\\www\\codehacking\\app\\Http\\Requests",
+        "parent_id": null,
+        "fsPath": "e:\\wamp64\\www\\codehacking\\app\\Http\\Requests",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "hEs0WDikgM2YwKJj"
     }
 ]

@@ -35,4 +35,23 @@ class UsersRequest extends Request
 
         ];
     }
+
+    public function attributes()
+    {
+        return [
+            'role_id' => 'role', //This will replace any instance of 'username' in validation messages with 'email'
+            //'anyinput' => 'Nice Name',
+            'photo_id' => 'photo'
+        ];
+    }
+
+    //AKO ZELIMO DA PRILAGODIMO PORUKU
+
+    // public function messages()
+    // {
+    //     return [
+    //         'name.required' => 'Unesite ime',
+
+    //     ];
+    // }
 }
