@@ -31,7 +31,7 @@ class UsersRequest extends Request
             'is_active' => 'required',
             'password' => 'required',
             'email' => 'unique:users',
-            'photo_id' => 'required'
+            'photo_id' => 'required|dimensions:width=128,height=128'
 
         ];
     }
@@ -47,11 +47,12 @@ class UsersRequest extends Request
 
     //AKO ZELIMO DA PRILAGODIMO PORUKU
 
-    // public function messages()
-    // {
-    //     return [
-    //         'name.required' => 'Unesite ime',
+    public function messages()
+    {
+        return [
 
-    //     ];
-    // }
+            'dimensions' => 'Please find image which dimensions are 128 x 128'
+
+        ];
+    }
 }
