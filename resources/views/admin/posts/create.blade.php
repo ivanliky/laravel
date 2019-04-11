@@ -22,7 +22,7 @@
                       
                 {!! Form::label('category_id' , 'Category:') !!}
                  
-                {!! Form::select('category_id' , array('1' => 'Php', '2' => 'Java Script' ), null , ['class' => 'form-control']) !!}
+                {!! Form::select('category_id' , ['' => 'Choose Categories' ] + $categories , null , ['class' => 'form-control']) !!}
                  
          </div>
 
