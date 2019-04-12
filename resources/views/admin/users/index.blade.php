@@ -46,7 +46,8 @@
           <tr>
             <td>{{ $user->id }}</td>
             {{-- <td><img height=50 src="{{ $user->photo ? $user->photo->file :'no user photo' }}"></td> --}}
-            <td><a href="{{ route('admin.users.edit', $user->id) }}" >{!! $user->photo ?  "<img height=70px src = ". $user->photo->file .">" : "No photo" !!}</a></td>
+            <td><a href="{{ route('admin.users.edit', $user->id) }}"><img height = 70 
+              src="{{ $user->photo ? $user->photo->file : 'http://placehold.it/400x400'  }}" alt=""></a></td>
             <td><a href="{{ route('admin.users.edit', $user->id) }}" >{{ $user->name }}</a></td>
             <td>{{ $user->email }}</td>
             <td>{{ $user->role->name }}</td>

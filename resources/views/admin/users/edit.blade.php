@@ -6,7 +6,7 @@
 
     <div class="col-sm-3">
 
-            <img src="{{ $user->photo->file }}" alt="User Photo" class="img-responsive img-rounded">
+            <img src="{{ $user->photo->file ?? 'http://placehold.it/200x200' }}" alt="User Photo" class="img-responsive img-rounded">
     
         </div>
 
