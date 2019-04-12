@@ -5,7 +5,18 @@
 
 <h1>Edit Post</h1>
 
+
 <div class="row">
+
+       <div class="col-sm-3">
+
+       
+              <img src="{{ $post->photo->file }}" class="img-responsive" alt=""><br>
+                    
+                           
+        </div>
+   
+<div class="col-sm-9">
 
  {!!  Form::model($post , [ 'method' => 'PATCH', 'action' => ['AdminPostsController@update', $post->id], 'files' => true ]) !!}
 
@@ -17,6 +28,7 @@
                {!! Form::text('title' , null , ['class' => 'form-control']) !!}
 
         </div>
+
 
         <div class="form-group">
                       
@@ -43,6 +55,8 @@
 
          </div>
 
+         
+
         <div class="form-group">
 
         {!! Form::submit('Update Post' , ['class' => 'btn btn-primary col-sm-6']) !!}
@@ -60,11 +74,14 @@
               {!! Form::submit('Delete Post' , ['class' => 'btn btn-danger col-sm-6']) !!}
     
         </div>
+
+    
     
     
    {!! Form::close() !!}
 
 
+   </div>
 
 </div>
 
