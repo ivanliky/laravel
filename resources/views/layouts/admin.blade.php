@@ -156,10 +156,10 @@
                             <li>
                                 <a href="{{ route('admin.categories.index') }}">All Categories</a>
                             </li>
-
+{{-- 
                             <li>
-                                <a href="{{ route('admin.categories.create') }}">Edit Category</a>
-                            </li>
+                                <a href="{{ route('admin.categories.edit', $category->id) }}">Edit Category</a>
+                            </li> --}}
 
                         </ul>
                         <!-- /.nav-second-level -->
