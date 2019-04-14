@@ -11,7 +11,7 @@
        <div class="col-sm-3">
 
        
-              <img src="{{ $post->photo->file }}" class="img-responsive" alt=""><br>
+              <img src="{{ $post->photo->file ?? 'http://placehold.it/300x300' }}" class="img-responsive" alt=""><br>
                     
                            
         </div>
