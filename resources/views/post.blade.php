@@ -28,6 +28,12 @@
 
         <!-- Post Content -->
         <p> {{ $post->body }} </p>
+
+            @if (Session::has('comment_message'))
+        
+            <p class="alert alert-success">{{ session('comment_message') }}</p>
+                
+            @endif
         
          <hr>
 
@@ -36,12 +42,30 @@
         <!-- Comments Form -->
         <div class="well">
             <h4>Leave a Comment:</h4>
-            <form role="form">
-                <div class="form-group">
-                    <textarea class="form-control" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+
+             {!!  Form::open([ 'method' => 'post', 'action' => 'PostCommentsController@store' ]) !!}
+            
+            
+                    <div class="form-group">
+
+                        <input type="hidden" name="post_id" value="{{ $post->id }}">
+            
+                           {!! Form::label('body' , 'Comment:') !!}
+            
+                           {!! Form::textarea('body' , null , ['class' => 'form-control', 'rows' => 5]) !!}
+            
+                    </div>
+            
+                    <div class="form-group">
+            
+                    {!! Form::submit('Submit comment' , ['class' => 'btn btn-primary']) !!}
+            
+                    </div>
+            
+            
+                {!! Form::close() !!}
+            
+     
         </div>
 
         <hr>
