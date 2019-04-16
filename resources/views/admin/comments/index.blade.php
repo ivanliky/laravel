@@ -19,6 +19,7 @@
           <th>Post</th>
           <th>Status</th>
           <th>Trash</th>
+          <th>Created at</th>
         </tr>
       </thead>
       <tbody>
@@ -30,8 +31,8 @@
         <td>{{  $comment->email  }}</td>
         <td>{{  $comment->body  }}</td>
         <td><a href="{{ route( 'home.post' , $comment->post->id )  }}">View post</a></td>
-
-        <td>
+        
+      <td>
 
      {!! Form::open(['method' => 'PATCH', 'action' => ['PostCommentsController@update', $comment->id]]) !!}
 
@@ -73,6 +74,8 @@
         {!! Form::close() !!}
  
           </td>
+
+          <td>{{  $comment->created_at->diffForHumans()  }}</td>
 
       </tr>
 
