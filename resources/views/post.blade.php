@@ -77,7 +77,8 @@
         @if (count($comments) > 0)
 
             @foreach ($comments as $comment)
-                
+
+                   
         <!-- Comment -->
 <div class="media">
 <a class="pull-left" href="#">
@@ -93,6 +94,9 @@
 
     @foreach ($comment->replies as $reply)
 
+          @if($reply->is_active == 1)
+
+
 <div id="nested-comment" class="media">
         <a class="pull-left" href="#">
             <img height = 64 class="media-object" src="{{ $reply->photo }}" alt="">
@@ -102,38 +106,51 @@
                 <small>{{ $reply->created_at->diffForHumans() }}</small>
             </h4>
             <p>{{ $reply->body }}</p>
-    
+
         </div>
 
-            {!!  Form::open([ 'method' => 'post', 'action' => 'CommentRepliesController@createReply' ]) !!}
-        
-                <div class="form-group">
+         
+        <div class="comment-reply-container">
 
-                        <input type="hidden" name="comment_id" value="{{ $comment->id }}">
+                <button class="toggle-reply btn btn-primary pull-right">Reply</button>
+
+
+                <div class="comment-reply col-sm-10">
+
+
+                        {!! Form::open(['method'=>'POST', 'action'=> 'CommentRepliesController@createReply']) !!}
+                             <div class="form-group">
+
+                                 <input type="hidden" name="comment_id" value="{{$comment->id}}">
+
+                                 {!! Form::label('body', 'Reply:') !!}
+                                 {!! Form::textarea('body', null, ['class'=>'form-control','rows'=>4])!!}
+                             </div>
+
+                             <div class="form-group">
+                                 {!! Form::submit('submit', ['class'=>'btn btn-primary']) !!}
+                             </div>
+                        {!! Form::close() !!}
+
+
+                </div>
     
-                            <br>
-
-                        {!! Form::textarea('body' , null , ['class' => 'form-control', 'rows' => 2]) !!}
-        
-                </div>
-        
-                <div class="form-group">
-        
-                {!! Form::submit('Reply' , ['class' => 'btn btn-primary']) !!}
-        
-                </div>
-        
-        
-            {!! Form::close() !!}
+          
     </div>
+
+</div>
+                            @else
+
+                                <h1 class="text-center">No Replies</h1>
+
                  
+                                 @endif
+
                      @endforeach
 
                 @endif
 
 
-
-      
             </div>
         </div>
 
@@ -141,10 +158,19 @@
 
         @endif
 
-        <!-- Comment -->
+@endsection
 
+@section('scripts')
 
- 
+        <script>
+        
+           $(".comment-reply-container .toggle-reply").click(function(){
 
+                $(this).next().slideToggle("slow");
+
+           }) 
+
+        </script>
+    
 @endsection
 
