@@ -81,56 +81,49 @@
                    
         <!-- Comment -->
 <div class="media">
+
 <a class="pull-left" href="#">
-<img height=64 class="media-object" src="{{ $comment->photo }}" alt="">
+
+    <img height=64 class="media-object" src="{{ $comment->photo }}" alt="">
+
 </a>
-<div class="media-body">
-<h4 class="media-heading">{{ $comment->author }}
+
+<div class="media-body" id="media-position">
+
+    <h4 class="media-heading">{{ $comment->author }}
+
     <small>{{ $comment->created_at->diffForHumans() }}</small>
-</h4>
-<p>{{ $comment->body }}</p>
+        
+    </h4>
 
-@if (count($comment->replies) > 0)
-
-    @foreach ($comment->replies as $reply)
-
-          @if($reply->is_active == 1)
-
+    <p>{{ $comment->body }}</p>
 
 <div id="nested-comment" class="media">
-        <a class="pull-left" href="#">
-            <img height = 64 class="media-object" src="{{ $reply->photo }}" alt="">
-        </a>
-        <div class="media-body">
-            <h4 class="media-heading">{{ $reply->author }}
-                <small>{{ $reply->created_at->diffForHumans() }}</small>
-            </h4>
-            <p>{{ $reply->body }}</p>
-
-        </div>
-
-         
+    
+   
         <div class="comment-reply-container">
 
-                <button class="toggle-reply btn btn-primary pull-right">Reply</button>
+                <button class="toggle-reply btn btn-primary pull-right" id="btn-replay">Reply</button>
 
 
                 <div class="comment-reply col-sm-10">
 
 
-                        {!! Form::open(['method'=>'POST', 'action'=> 'CommentRepliesController@createReply']) !!}
-                             <div class="form-group">
+            {!! Form::open(['method'=>'POST', 'action'=> 'CommentRepliesController@createReply']) !!}
 
-                                 <input type="hidden" name="comment_id" value="{{$comment->id}}">
+                    <div class="form-group">
 
-                                 {!! Form::label('body', 'Reply:') !!}
-                                 {!! Form::textarea('body', null, ['class'=>'form-control','rows'=>4])!!}
-                             </div>
+                        <input type="hidden" name="comment_id" value="{{$comment->id}}">
 
-                             <div class="form-group">
-                                 {!! Form::submit('submit', ['class'=>'btn btn-primary']) !!}
-                             </div>
-                        {!! Form::close() !!}
+                        {!! Form::label('body', 'Comment:') !!}
+                        {!! Form::textarea('body', null, ['class'=>'form-control','rows'=>4])!!}
+                        
+                    </div>
+
+                    <div class="form-group">
+                        {!! Form::submit('submit', ['class'=>'btn btn-primary']) !!}
+                    </div>
+            {!! Form::close() !!}
 
 
                 </div>
@@ -139,9 +132,31 @@
     </div>
 
 </div>
-                            @else
 
-                                <h1 class="text-center">No Replies</h1>
+@if (count($comment->replies) > 0)
+
+    @foreach ($comment->replies as $reply)
+
+          @if($reply->is_active == 1)
+
+          <div  id="replay">
+
+           <a class="pull-left" href="#">
+                <img height = 64 class="media-object" src="{{ $reply->photo }}" alt="">
+           </a>
+            
+            <div id="msg">
+            <h4 class="media-heading">{{ $reply->author }}
+                <small>{{ $reply->created_at->diffForHumans() }}</small>
+            </h4>
+            <p>{{ $reply->body }}</p>
+            </div>
+
+          </div>
+
+
+
+                           
 
                  
                                  @endif

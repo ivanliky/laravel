@@ -9,7 +9,7 @@
 
 #nested-comment {
 
-    margin-top: 60px;
+    margin-top: 20px;
 
 }
 
@@ -18,4 +18,32 @@
 
     display: none;
 
+}
+
+#replay {
+
+    margin-top: 10px;
+    margin-bottom: 30px;
+    display: block;
+
+}
+
+#replay #msg {
+
+    margin-left: 72px;
+
+}
+
+#btn-replay {
+
+    position: absolute;
+    left: 400px;
+    top: 0px;
+
+}
+
+#media-position {
+
+    position: relative;
+    width: 470px;
 }
